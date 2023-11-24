@@ -1,0 +1,57 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Jue Nov 23 22:53:09 2023
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   empleados.ctl
+Data File:      empleados.csv
+  Bad File:     empleados.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table EMPLEADO, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+EMP_ID                              FIRST     *   ,  O(") CHARACTER            
+TIPIDE_ID                            NEXT     *   ,  O(") CHARACTER            
+EMP_CODIGO_IDENTIFICACION            NEXT     *   ,  O(") CHARACTER            
+EMP_NOMBRE                           NEXT     *   ,  O(") CHARACTER            
+EMP_APELLIDO                         NEXT     *   ,  O(") CHARACTER            
+EMP_FECHA_NACIMIENTO                 NEXT     *   ,  O(") DATE MM/DD/YYYY      
+EMP_GENERO                           NEXT     *   ,  O(") CHARACTER            
+
+Record 1: Rejected - Error on table EMPLEADO, column EMP_ID.
+ORA-01722: invalid number
+
+
+Table EMPLEADO:
+  100 Rows successfully loaded.
+  1 Row not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 115584 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:           101
+Total logical records rejected:         1
+Total logical records discarded:        0
+
+Run began on Jue Nov 23 22:53:09 2023
+Run ended on Jue Nov 23 22:53:09 2023
+
+Elapsed time was:     00:00:00.11
+CPU time was:         00:00:00.01
