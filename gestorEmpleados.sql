@@ -552,8 +552,8 @@ ALTER TABLE SEGURIDADSOCIAL
 --------------------------------------------------------
 REM INSERTING into CONTRATACION.HABILIDADES
 SET DEFINE OFF;
-Insert into CONTRATACION.HABILIDADES (HAB_ID,HAB_NOMBRE) values ('1','Comunicación');
-Insert into CONTRATACION.HABILIDADES (HAB_ID,HAB_NOMBRE) values ('2','Técnica');
+Insert into CONTRATACION.HABILIDADES (HAB_ID,HAB_NOMBRE,HAB_DESCRIPCION) values ('1','Comunicación', 'Desc Comunicación');
+Insert into CONTRATACION.HABILIDADES (HAB_ID,HAB_NOMBRE,HAB_DESCRIPCION) values ('2','Técnica', 'Desc Técnica');
 
 REM INSERTING into CONTRATACION.AREA
 SET DEFINE OFF;
@@ -571,8 +571,8 @@ Insert into CONTRATACION.SEDE (SED_ID,SED_NIT,SED_NOMBRE) values ('2','987654321
 Insert into CONTRATACION.SEDE (SED_ID,SED_NIT,SED_NOMBRE) values ('3','554445688','Sede 3');
 REM INSERTING into CONTRATACION.SEGURIDADSOCIAL
 SET DEFINE OFF;
-Insert into CONTRATACION.SEGURIDADSOCIAL (SEGSOC_ID,SEGSOC_NOMBRE,SEGSOC_TIPO) values ('1','Empresa de Salud','1');
-Insert into CONTRATACION.SEGURIDADSOCIAL (SEGSOC_ID,SEGSOC_NOMBRE,SEGSOC_TIPO) values ('2','Empresa de Pensión','2');
+Insert into CONTRATACION.SEGURIDADSOCIAL (SEGSOC_ID,SEGSOC_NOMBRE,SEGSOC_TIPO, SEGSOC_DESCRIPCION) values ('1','Empresa de Salud','1', 'Empresa de Salud');
+Insert into CONTRATACION.SEGURIDADSOCIAL (SEGSOC_ID,SEGSOC_NOMBRE,SEGSOC_TIPO, SEGSOC_DESCRIPCION) values ('2','Empresa de Pensión','2', 'Empresa de Pensión');
 REM INSERTING into CONTRATACION.TIPO_CONTRATO
 SET DEFINE OFF;
 Insert into CONTRATACION.TIPO_CONTRATO (TIPCON_ID,TIPCON_NOMBRE) values ('1','Tiempo Completo');
@@ -699,18 +699,18 @@ Insert into CONTRATACION.EMPLEADO (EMP_ID,TIPIDE_ID,EMP_CODIGO_IDENTIFICACION,EM
 Insert into CONTRATACION.EMPLEADO (EMP_ID,TIPIDE_ID,EMP_CODIGO_IDENTIFICACION,EMP_NOMBRE,EMP_APELLIDO,EMP_FECHA_NACIMIENTO,EMP_GENERO) values ('6','2','666666666','Laura','López',to_date('25/12/92','DD/MM/RR'),'FEMENINO');
 REM INSERTING into CONTRATACION.PERFILCARGO
 SET DEFINE OFF;
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('1','Gerente de Ventas');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('2','Analista de Recursos Humanos');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('3','Desarrollador Web');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('4','Analista de Datos');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('5','Especialista en Marketing Digital');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('6','Ingeniero de Sistemas');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('7','Asistente Administrativo');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('8','Consultor de Tecnología');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('9','Coordinador de Proyectos');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('10','Diseñador Gráfico');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('11','Especialista en Finanzas');
-Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO) values ('12','Coordinador de Marketing');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('1','Gerente de Ventas', 'Gerente de Ventas');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('2','Analista de Recursos Humanos', 'Analista de Recursos Humanos');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('3','Desarrollador Web', 'Desarrollador Web');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('4','Analista de Datos', 'Analista de Datos');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('5','Especialista en Marketing Digital', 'Especialista en Marketing Digital');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('6','Ingeniero de Sistemas', 'Ingeniero de Sistemas');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('7','Asistente Administrativo', 'Asistente Administrativo');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('8','Consultor de Tecnología', 'Consultor de Tecnología');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('9','Coordinador de Proyectos', 'Coordinador de Proyectos');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('10','Diseñador Gráfico', 'Diseñador Gráfico');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('11','Especialista en Finanzas', 'Especialista en Finanzas');
+Insert into CONTRATACION.PERFILCARGO (PERCAR_ID,PERCAR_CARGO,PERCAR_DESCRIPCION) values ('12','Coordinador de Marketing', 'Coordinador de Marketing');
 REM INSERTING into CONTRATACION.HABILIDADES_PERFILCARGO
 SET DEFINE OFF;
 REM INSERTING into CONTRATACION.POSICION
