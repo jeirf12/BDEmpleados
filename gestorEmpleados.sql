@@ -148,8 +148,8 @@ create table CONTRATO
    CON_FECHA_FIN        DATE,
    constraint PK_CONTRATO primary key (CON_ID), 
    constraint UN_CON_FOLIO unique(CON_FOLIO)
-)TABLESPACE contratacion_rh
-   STORAGE (INITIAL 10M NEXT 5M MAXEXTENTS UNLIMITED);
+) TABLESPACE contratacion_rh
+   STORAGE (INITIAL 50M NEXT 10M MAXEXTENTS UNLIMITED);
 
 /*==============================================================*/
 /* Index: PERSONA_CONTRATO_FK                                   */
@@ -191,8 +191,8 @@ create table CONTRATO_SEGURIDADSOCIAL
    CONSEG_FECHA_FINALIZACION DATE,
    constraint PK_CONTRATO_SEGURIDADSOCIAL primary key (CON_ID, SEGSOC_ID, CONSEG_FECHA_INICIO),
    constraint UN_COD_DOCUMENTO unique(CONSEG_CODIGO_DOCUMENTO) 
-)TABLESPACE contratacion_rh
-   STORAGE (INITIAL 10M NEXT 5M MAXEXTENTS UNLIMITED);
+) TABLESPACE contratacion_rh
+   STORAGE (INITIAL 100M NEXT 50M MAXEXTENTS UNLIMITED);
 
 /*==============================================================*/
 /* Index: CONTRATO_CSS_FK                                       */
@@ -224,7 +224,7 @@ create table EMPLEADO
    constraint PK_EMPLEADO primary key (EMP_ID), 
    constraint un_emp_cod_iden UNIQUE (EMP_CODIGO_IDENTIFICACION)
 )TABLESPACE contratacion_rh
-   STORAGE (INITIAL 10M NEXT 5M MAXEXTENTS UNLIMITED);
+   STORAGE (INITIAL 50M NEXT 10M MAXEXTENTS UNLIMITED);
 
 /*==============================================================*/
 /* Index: TIPO_IDEN_EMPLEADO_FK                                 */
@@ -303,7 +303,7 @@ create table NOVEDADES
    NOV_TIPO             INTEGER              not null,
    constraint PK_NOVEDADES primary key (CON_ID, NOV_CODIGO_DOCUMENTO)
 )TABLESPACE contratacion_rh
-   STORAGE (INITIAL 5M NEXT 5M MAXEXTENTS UNLIMITED);
+   STORAGE (INITIAL 30M NEXT 10M MAXEXTENTS UNLIMITED);
 
 /*==============================================================*/
 /* Index: CONTRATO_NOVEDAD_FK                                   */
@@ -378,7 +378,7 @@ create table POSICION_CONTRATO
    POSCON_CARACTERISTICA VARCHAR2(50) check (POSCON_CARACTERISTICA in ('PRINCIPAL','SECUNDARIO')) not null,
    constraint PK_POSICION_CONTRATO primary key (CON_ID, POS_ID, POSCON_FECHA_INICIO)
 )TABLESPACE contratacion_rh
-   STORAGE (INITIAL 10M NEXT 5M MAXEXTENTS UNLIMITED);
+   STORAGE (INITIAL 30M NEXT 10M MAXEXTENTS UNLIMITED);
 
 /*==============================================================*/
 /* Index: POSICIONCONTRATO_CONTRATO_FK                          */
@@ -405,7 +405,7 @@ create table SALARIOS
    SAL_VALOR            VARCHAR2(250)        not null,
    constraint PK_SALARIOS primary key (CON_ID, SAL_FECHA_INICIO)
 )TABLESPACE contratacion_rh
-   STORAGE (INITIAL 10M NEXT 5M MAXEXTENTS UNLIMITED);
+   STORAGE (INITIAL 50M NEXT 10M MAXEXTENTS UNLIMITED);
 
 /*==============================================================*/
 /* Index: CONTRATO_SALARIO_FK                                   */
