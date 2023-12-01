@@ -1,4 +1,6 @@
---- PRIMERA CONSULTA
+/*
+    Salario máximo, mínimo y promedio para cada sede. 
+*/
 SELECT 
         sed.sed_nombre as "Sede", 
         max(sal.sal_valor) as "Salario mayor", 
@@ -12,7 +14,10 @@ SELECT
     GROUP BY sed.sed_nombre
     ORDER BY  "Sede"
 
---- SEGUNDA CONSULTA
+/*
+    La información de todos los empleados de la compañía quienes tienen 
+    asignado un salario  
+*/
 SELECT 
     emp.emp_nombre || ' ' || emp.emp_apellido as "Nombre Completo", 
     emp.emp_codigo_identificacion as "Identificación", 
@@ -27,7 +32,10 @@ WHERE   EXISTS (
 )
 ORDER BY "Nombre Completo"
 
---- TERCERA CONSULTA
+/*
+ Determina el árbol jerparquico de los departamentos de ventas, recuersos humanos y tecnología 
+ y adicionamente, muestra quién está en el cargo. 
+*/
 SELECT  LPAD(pc.percar_cargo, Length(pc.percar_cargo) + (LEVEL*4) - 4, '-')  as Arbol, 
         emp.emp_nombre || ' ' || emp.emp_apellido as Empleado, 
         ar.area_nombre as Area, 
@@ -47,7 +55,9 @@ ORDER SIBLINGS BY POS.jefe_id
 
 --- CUARTA CONSULTA
 
---- Los cargos que no están asignados en la sede dos, pero sí en la sedes uno y tres
+/*
+    Las cargos laborales  que están en la sede 2 pero que no están en la sede tres. 
+*/
 SELECT DISTINCT 
     pfc.percar_cargo, 
     CAST(pfc.percar_descripcion as Varchar(2000)) as Cargo
@@ -63,7 +73,9 @@ FROM contratacion.PerfilCargo PFC
     INNER JOIN contratacion.Sede SED ON  po.sed_id = sed.sed_id 
 WHERE sed.sed_id in  (3,1)
 
---- QUINTA CONSULTA
+/*
+    Consulta que muestra la información contractual básica de los empleados de la compañía
+*/ 
 SELECT DISTINCT 
     pfc.percar_cargo as Cargo,  
     emp.emp_nombre || ' ' || emp.emp_apellido as NombreCompleto, 
