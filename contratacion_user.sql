@@ -25,3 +25,17 @@
 
    -- Establece una cuota ilimitada en la tablespace 'contratacion_rh' para el usuario 'contratacion'
    ALTER USER contratacion QUOTA UNLIMITED ON contratacion_rh;
+
+   CREATE ROLE Contralor; 
+   CREATE ROLE Talento_humano; 
+
+   -- Crea un nuevo usuario llamado 'Contralor1' con contraseña 'oracle'
+   CREATE USER Contralor1 IDENTIFIED BY oracle;
+   GRANT CREATE SESSION TO Contralor1;
+   GRANT Contralor TO Contralor1;  
+
+
+   -- Crea un nuevo usuario llamado 'PasanteTH1' con contraseña 'oracle'
+   CREATE USER PasanteTH1 IDENTIFIED BY oracle;
+   GRANT CREATE SESSION TO PasanteTH1;
+   GRANT Talento_humano TO PasanteTH1;  
