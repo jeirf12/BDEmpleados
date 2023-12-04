@@ -1,5 +1,13 @@
    -- Elimina un usuario llamado 'contratacion'
-   DROP USER contratacion;
+   DROP USER contratacion CASCADE;
+
+   -- Elimina los usuarios del sistema 'contratacion'
+   DROP USER Contralor1 CASCADE;
+   DROP USER PasanteTH1 CASCADE;
+
+   -- Elimina los roles del sistema 'contratacion'
+   DROP ROLE Contralor; 
+   DROP ROLE Talento_humano; 
 
    -- Elimina la tablespace llamada 'contratacion_rh' incluyendo su contenido y archivos de datos
    DROP TABLESPACE contratacion_rh INCLUDING CONTENTS AND DATAFILES;
