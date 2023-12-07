@@ -2,17 +2,17 @@
     Salario máximo, mínimo y promedio para cada sede. 
 */
 SELECT 
-        sed.sed_nombre as "Sede", 
-        max(sal.sal_valor) as "Salario mayor", 
-        min(sal.sal_valor) as "Salario menor", 
-        ROUND(avg(sal.sal_valor), 2) as "Salario promedio"
-    FROM sede SED 
-        INNER JOIN  posicion PO ON  po.sed_id = sed.sed_id 
-        INNER JOIN  posicion_contrato PC ON  po.pos_id = pc.pos_id 
-        INNER JOIN  contrato CON ON  pc.con_id = con.con_id
-        INNER JOIN  Salarios SAL ON  con.con_id = sal.con_id 
-    GROUP BY sed.sed_nombre
-    ORDER BY  "Sede"
+    sed.sed_nombre as "Sede", 
+    max(sal.sal_valor) as "Salario mayor", 
+    min(sal.sal_valor) as "Salario menor", 
+    ROUND(avg(sal.sal_valor), 2) as "Salario promedio"
+FROM sede SED 
+    INNER JOIN  posicion PO ON  po.sed_id = sed.sed_id 
+    INNER JOIN  posicion_contrato PC ON  po.pos_id = pc.pos_id 
+    INNER JOIN  contrato CON ON  pc.con_id = con.con_id
+    INNER JOIN  Salarios SAL ON  con.con_id = sal.con_id 
+GROUP BY sed.sed_nombre
+ORDER BY  "Sede"
 
 /*
     La información de todos los empleados de la compañía quienes tienen 
